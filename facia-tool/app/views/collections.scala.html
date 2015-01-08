@@ -17,6 +17,14 @@
         afterAdd: layout.addNewColumn
     }"></div>
 
+    <div class="modalDialog" data-bind="fadeVisible: modalDialog.isOpen">
+        <!-- ko if: modalDialog.templateName -->
+            <div class="modalDialog-content" data-bind="template: {
+                name: modalDialog.templateName,
+                data: modalDialog.templateData
+            }"></div>
+        <!-- /ko -->
+    </div>
 
     @templates.vertical_layout()
 
@@ -225,6 +233,19 @@
             </div>
         </div>
 
+    </script>
+
+    <script type="text/html" id="confirm_breaking_changes">
+        <div class="modalDialog-message">
+            <h3>Confirm alert before sending</h3>
+            What goes in here?
+            <h4>Edition</h4>
+        </div>
+        <hr>
+        <div class="buttons modalDialog-confirm">
+            <button class="secondary-action">Cancel</button>
+            <button class="primary-action">Send alert</button>
+        </div>
     </script>
 
 </div>

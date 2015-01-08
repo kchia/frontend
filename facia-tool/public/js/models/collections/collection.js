@@ -9,6 +9,7 @@ define([
     'utils/mediator',
     'utils/populate-observables',
     'modules/authed-ajax',
+    'modules/modal-dialog',
     'models/group',
     'models/collections/article',
     'modules/content-api'
@@ -22,6 +23,7 @@ define([
     mediator,
     populateObservables,
     authedAjax,
+    modalDialog,
     Group,
     Article,
     contentApi
@@ -156,7 +158,15 @@ define([
     };
 
     Collection.prototype.publishDraft = function() {
-        this.processDraft(true);
+        var that = this;
+        modalDialog.confirm({
+            name: 'confirm_breaking_changes',
+            data: {}
+        })
+        .done(function () {
+            console.log('processDraft');
+            // that.processDraft(true);
+        });
     };
 
     Collection.prototype.discardDraft = function() {

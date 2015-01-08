@@ -1789,7 +1789,7 @@ hr {
     background-color: #ddd;
 }
 
-collection-widget .buttons button {
+.buttons button {
     height: 26px;
     margin: 0 4px;
     background: none;
@@ -1801,13 +1801,17 @@ collection-widget .buttons button {
     color: #666;
     outline: none;
 }
-collection-widget .buttons button:hover {
+.buttons button:hover {
     background-color: #eee;
     cursor: pointer;
 }
-collection-widget .buttons button i {
+.buttons button i {
     margin-left: 3px;
     color: #999;
+}
+.buttons button.primary-action {
+    background-color: #1976D2;
+    color: #fff;
 }
 
 .history,
@@ -1828,6 +1832,35 @@ collection-widget .buttons button i {
     display: none;
 }
 
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+}
+.modalDialog-content {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.82);
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.modalDialog-message {
+    padding: 10px 20px;
+}
+
+.modalDialog-confirm {
+    height: 40px;
+    line-height: 40px;
+}
+.modalDialog-confirm .primary-action {
+    float: right;
+}
 
 /*****************************************/
 /* MEDIA QUERIES */
